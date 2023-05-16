@@ -1,11 +1,10 @@
-import React, { lazy } from "react";
+import React from "react";
 import { lazyWithRetry } from "./lazyWithRetry";
 
 const MoviesContentRuntime = lazyWithRetry(() => import("movies/Movies"));
 import { AppShell } from "ui";
 import { PlaylistContent } from "playlist-content";
 import { MoviesContent } from "movies-content";
-/* @vite-ignore */
 
 class ErrorBoundary extends React.Component<
   {
@@ -28,8 +27,7 @@ class ErrorBoundary extends React.Component<
 
   render() {
     if (this.state.hasError) {
-      // return <MoviesContent />;
-      return <div>Error</div>;
+      return <MoviesContent />;
     }
 
     return this.props.children;

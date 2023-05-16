@@ -11,13 +11,16 @@ export default defineConfig({
       exposes: {
         "./Movies": "./src/Movies.tsx",
       },
+      remotes: {
+        playlist: "http://localhost:3001/dist/assets/remoteEntry.js",
+      },
       shared: [
         "react",
         "react-dom",
         "card",
-        "movies-content",
-        "playlist-content",
         "ui",
+        "movies-content",
+        "@mantine/core",
       ],
     }),
   ],

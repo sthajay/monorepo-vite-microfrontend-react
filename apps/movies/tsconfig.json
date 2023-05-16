@@ -2,8 +2,10 @@
   "extends": "tsconfig/nextjs.json",
   "compilerOptions": {
     "jsx": "react",
-    "plugins": [{ "name": "next" }]
+    "plugins": [{ "name": "next" }],
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "../../packages/movies-content/MoviesContent.tsx"],
-  "exclude": ["node_modules"]
+  "exclude": ["node_modules"],
+  "declarationDir": "types"
+
 }

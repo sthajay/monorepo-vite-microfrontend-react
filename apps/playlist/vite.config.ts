@@ -4,21 +4,18 @@ import federation from "@originjs/vite-plugin-federation";
 
 export default defineConfig({
   plugins: [
-    react(),
+    react({
+      // jsxRuntime: "classic",
+    }),
     federation({
-      name: "pdp",
+      name: "playlist",
+      exposes: {
+        "./test": "./src/test.tsx",
+      },
       remotes: {
         movies: "http://localhost:3000/dist/assets/remoteEntry.js",
       },
-      shared: [
-        "react",
-        "react-dom",
-        "card",
-        "movies-content",
-        "playlist-content",
-        "ui",
-        "store",
-      ],
+      shared: ["react", "react-dom", "card", "store"],
     }),
   ],
   build: {
