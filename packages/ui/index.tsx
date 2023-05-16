@@ -10,7 +10,7 @@ import {
   Text,
 } from "@mantine/core";
 import { BrowserRouter, Outlet, Link, Routes, Route } from "react-router-dom";
-// import { useStore } from "store";
+import { useStore } from "store";
 
 export type Route = {
   element: React.FunctionComponent;
@@ -55,7 +55,7 @@ export const AppShell: React.FunctionComponent<{
   routes: Route[];
   navLinks: NavLink[];
 }> = ({ colorScheme, routes, title, navLinks }) => {
-  //   const { movies } = useStore();
+  const { movies } = useStore();
 
   return (
     <BrowserRouter>
@@ -90,7 +90,7 @@ export const AppShell: React.FunctionComponent<{
               })}
             >
               <Title sx={{ flexGrow: 1 }}>{title}</Title>
-              {/* <Text size="xl">{movies.length} selected</Text> */}
+              <Text size="xl">{movies.length} selected</Text>
             </Header>
           }
         >
