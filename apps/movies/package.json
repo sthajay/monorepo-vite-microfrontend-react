@@ -19,7 +19,8 @@
     "tsconfig": "workspace:*",
     "ui": "workspace:*",
     "card": "workspace:*",
-    "movies-content": "workspace:*"
+    "movies-content": "workspace:*",
+    "playlist-content": "workspace:*"
   },
   "devDependencies": {
     "@types/react": "^18.0.28",

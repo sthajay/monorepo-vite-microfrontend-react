@@ -1,5 +1,5 @@
 {
-  "name": "ui",
+  "name": "playlist-content",
   "version": "0.0.0",
   "main": "./index.tsx",
   "types": "./index.tsx",
@@ -15,6 +15,7 @@
     "react": "^17.0.2",
     "tsconfig": "workspace:*",
     "store": "workspace:*",
+    "card": "workspace:*",
     "typescript": "^4.5.2"
   },
   "dependencies": {
