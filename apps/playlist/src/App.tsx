@@ -1,9 +1,11 @@
-import React from "react";
+import React, { lazy } from "react";
+import { lazyWithRetry } from "./lazyWithRetry";
+
+const MoviesContentRuntime = lazyWithRetry(() => import("movies/Movies"));
 import { AppShell } from "ui";
 import { PlaylistContent } from "playlist-content";
 import { MoviesContent } from "movies-content";
 /* @vite-ignore */
-const MoviesContentRuntime = React.lazy(() => import("movies/Movies"));
 
 class ErrorBoundary extends React.Component<
   {
@@ -26,7 +28,8 @@ class ErrorBoundary extends React.Component<
 
   render() {
     if (this.state.hasError) {
-      return <MoviesContent />;
+      // return <MoviesContent />;
+      return <div>Error</div>;
     }
 
     return this.props.children;
@@ -41,7 +44,7 @@ function App() {
         navLinks={[
           {
             label: "Home",
-            path: "/movies",
+            path: "/",
           },
           {
             label: "Playlist",
@@ -50,7 +53,7 @@ function App() {
         ]}
         routes={[
           {
-            path: "/movies",
+            path: "/",
             element: () => (
               <ErrorBoundary>
                 <MoviesContentRuntime />

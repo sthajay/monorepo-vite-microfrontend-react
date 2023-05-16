@@ -9,10 +9,16 @@ export default defineConfig({
       name: "movies",
       filename: "remoteEntry.js",
       exposes: {
-        "./Movies": "./src/MoviesContent.tsx",
-        "./MoviesCard": "./src/MoviesCard.tsx",
+        "./Movies": "./src/Movies.tsx",
       },
-      shared: ["react", "react-dom", "card"],
+      shared: [
+        "react",
+        "react-dom",
+        "card",
+        "movies-content",
+        "playlist-content",
+        "ui",
+      ],
     }),
   ],
   build: {
