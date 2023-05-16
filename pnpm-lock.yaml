@@ -75,6 +75,64 @@ importers:
         specifier: ^4.3.2
         version: 4.3.2
 
+  apps/playlist:
+    dependencies:
+      '@emotion/react':
+        specifier: ^11.11.0
+        version: 11.11.0(@types/react@18.2.5)(react@18.2.0)
+      '@mantine/core':
+        specifier: ^6.0.10
+        version: 6.0.10(@emotion/react@11.11.0)(@mantine/hooks@6.0.10)(@types/react@18.2.5)(react-dom@18.2.0)(react@18.2.0)
+      '@mantine/hooks':
+        specifier: ^6.0.10
+        version: 6.0.10(react@18.2.0)
+      card:
+        specifier: workspace:*
+        version: link:../../packages/card
+      react:
+        specifier: ^18.2.0
+        version: 18.2.0
+      react-dom:
+        specifier: ^18.2.0
+        version: 18.2.0(react@18.2.0)
+      tsconfig:
+        specifier: workspace:*
+        version: link:../../packages/tsconfig
+      ui:
+        specifier: workspace:*
+        version: link:../../packages/ui
+    devDependencies:
+      '@types/react':
+        specifier: ^18.0.28
+        version: 18.2.5
+      '@types/react-dom':
+        specifier: ^18.0.11
+        version: 18.2.3
+      '@typescript-eslint/eslint-plugin':
+        specifier: ^5.57.1
+        version: 5.57.1(@typescript-eslint/parser@5.59.2)(eslint@8.38.0)(typescript@5.0.2)
+      '@typescript-eslint/parser':
+        specifier: ^5.57.1
+        version: 5.59.2(eslint@8.38.0)(typescript@5.0.2)
+      '@vitejs/plugin-react':
+        specifier: ^4.0.0
+        version: 4.0.0(vite@4.3.2)
+      eslint:
+        specifier: ^8.38.0
+        version: 8.38.0
+      eslint-plugin-react-hooks:
+        specifier: ^4.6.0
+        version: 4.6.0(eslint@8.38.0)
+      eslint-plugin-react-refresh:
+        specifier: ^0.3.4
+        version: 0.3.4(eslint@8.38.0)
+      typescript:
+        specifier: ^5.0.2
+        version: 5.0.2
+      vite:
+        specifier: ^4.3.2
+        version: 4.3.2
+
   packages/card:
     dependencies:
       '@emotion/react':
@@ -86,9 +144,6 @@ importers:
       '@mantine/hooks':
         specifier: ^6.0.10
         version: 6.0.10(react@17.0.2)
-      react-router-dom:
-        specifier: ^6.11.1
-        version: 6.11.1(react-dom@18.2.0)(react@17.0.2)
     devDependencies:
       '@types/react':
         specifier: ^18.2.0
