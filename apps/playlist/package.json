@@ -18,7 +18,8 @@
     "react-dom": "^18.2.0",
     "tsconfig": "workspace:*",
     "ui": "workspace:*",
-    "card": "workspace:*"
+    "card": "workspace:*",
+    "store": "workspace:*"
   },
   "devDependencies": {
     "@types/react": "^18.0.28",

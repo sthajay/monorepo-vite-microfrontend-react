@@ -1,11 +1,12 @@
 import React from "react";
 import { AppShell } from "ui";
-import MoviesContent from "./MoviesContent";
+import PlaylistContent from "./PlaylistContent";
 
 function App() {
   return (
     <div>
       <AppShell
+        title="Playlist"
         navLinks={[
           {
             label: "Home",
@@ -17,10 +18,9 @@ function App() {
           },
         ]}
         routes={[
-          { path: "/", element: MoviesContent },
-          { path: "/playlist", element: () => <div>Playlist </div> },
+          { path: "/", element: () => <div>Movies </div> },
+          { path: "/playlist", element: PlaylistContent },
         ]}
-        title="Movies"
         colorScheme="dark"
       />
     </div>
