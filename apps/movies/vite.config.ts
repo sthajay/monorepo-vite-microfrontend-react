@@ -10,8 +10,9 @@ export default defineConfig({
       filename: "remoteEntry.js",
       exposes: {
         "./Movies": "./src/MoviesContent.tsx",
+        "./MoviesCard": "./src/MoviesCard.tsx",
       },
-      shared: ["react", "react-dom"],
+      shared: ["react", "react-dom", "card"],
     }),
   ],
   build: {
