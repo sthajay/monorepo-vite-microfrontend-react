@@ -11,6 +11,7 @@ export default defineConfig({
       exposes: {
         "./Movies": "./src/MoviesContent.tsx",
         "./MoviesCard": "./src/MoviesCard.tsx",
+        "./Home": "./src/Home.tsx",
       },
       shared: ["react", "react-dom", "card"],
     }),

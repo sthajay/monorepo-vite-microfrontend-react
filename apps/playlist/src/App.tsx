@@ -2,6 +2,7 @@ import React from "react";
 import { AppShell } from "ui";
 import { PlaylistContent } from "playlist-content";
 import { MoviesContent } from "movies-content";
+import Home from "movies/Home";
 /* @vite-ignore */
 const MoviesContentRuntime = React.lazy(() => import("movies/Movies"));
 
@@ -41,6 +42,10 @@ function App() {
         navLinks={[
           {
             label: "Home",
+            path: "/",
+          },
+          {
+            label: "Movies",
             path: "/movies",
           },
           {
@@ -49,6 +54,7 @@ function App() {
           },
         ]}
         routes={[
+          { path: "/", element: Home },
           {
             path: "/movies",
             element: () => (
