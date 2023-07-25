@@ -1,0 +1,24 @@
+version: '3'
+services:
+  app1:
+    build: 
+      context: .
+      dockerfile: ./apps/movies/Dockerfile
+    ports:
+      - 3000:3000
+    # ports:
+    # - "127.0.0.1:3000:3000"
+    image: sthajay/movies:3.2
+    container_name: movies_container
+    command: pnpm run dev:movies --host 0.0.0.0
+  app2:
+    build: 
+      context: .
+      dockerfile: ./apps/playlist/Dockerfile
+    ports:
+      - 3001:3001
+    # ports:
+    # - "127.0.0.1:3000:3000"
+    image: sthajay/playlist:3.4
+    container_name: playlist_container
+    command: pnpm run dev:playlist --host 0.0.0.0
