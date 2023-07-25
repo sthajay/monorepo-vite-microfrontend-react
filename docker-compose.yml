@@ -4,6 +4,10 @@ services:
     build: 
       context: .
       dockerfile: ./apps/movies/Dockerfile
+    x-develop:
+      watch:
+        - action: rebuild
+          path: ./apps/movies
     ports:
       - 3000:3000
     # ports:
@@ -15,6 +19,10 @@ services:
     build: 
       context: .
       dockerfile: ./apps/playlist/Dockerfile
+    x-develop:
+      watch:
+        - action: rebuild
+          path: ./apps/playlist
     ports:
       - 3001:3001
     # ports:
