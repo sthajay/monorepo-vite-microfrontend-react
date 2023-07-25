@@ -41,7 +41,7 @@ function App() {
         title="Playlist"
         navLinks={[
           {
-            label: "Home",
+            label: "Homes",
             path: "/",
           },
           {
