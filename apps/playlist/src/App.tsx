@@ -1,38 +1,12 @@
 import React from "react";
 import { AppShell } from "ui";
 import { PlaylistContent } from "playlist-content";
-import { MoviesContent } from "movies-content";
-import Home from "movies/Home";
+// import MoviesContent from "movies-content";
+// import Home from "movies/Home";
 /* @vite-ignore */
 const MoviesContentRuntime = React.lazy(() => import("movies/Movies"));
-
-class ErrorBoundary extends React.Component<
-  {
-    children: React.ReactNode;
-  },
-  {
-    hasError: boolean;
-  }
-> {
-  constructor(props: { children: React.ReactNode }) {
-    super(props);
-    this.state = { hasError: false };
-  }
-
-  static getDerivedStateFromError() {
-    return { hasError: true };
-  }
-
-  componentDidCatch() {}
-
-  render() {
-    if (this.state.hasError) {
-      return <MoviesContent />;
-    }
-
-    return this.props.children;
-  }
-}
+// const MoviesContent = React.lazy(() => import("movies/Home"));
+const MoviesContent = React.lazy(() => import("movies-content"));
 
 function App() {
   return (
@@ -54,14 +28,10 @@ function App() {
           },
         ]}
         routes={[
-          { path: "/", element: Home },
+          { path: "/", element: MoviesContentRuntime },
           {
             path: "/movies",
-            element: () => (
-              <ErrorBoundary>
-                <MoviesContentRuntime />
-              </ErrorBoundary>
-            ),
+            element: MoviesContent
           },
           { path: "/playlist", element: PlaylistContent },
         ]}

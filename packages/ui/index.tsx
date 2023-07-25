@@ -22,6 +22,34 @@ export type NavLink = {
   path: string;
 };
 
+class ErrorBoundary extends React.Component<
+  {
+    children: React.ReactNode;
+  },
+  {
+    hasError: boolean;
+  }
+> {
+  constructor(props: { children: React.ReactNode }) {
+    super(props);
+    this.state = { hasError: false };
+  }
+
+  static getDerivedStateFromError() {
+    return { hasError: true };
+  }
+
+  componentDidCatch() {}
+
+  render() {
+    if (this.state.hasError) {
+      return <>Error</>;
+    }
+
+    return this.props.children;
+  }
+}
+
 function MainLink({ label, path }: NavLink) {
   return (
     <Link to={path}>
@@ -94,15 +122,17 @@ export const AppShell: React.FunctionComponent<{
             </Header>
           }
         >
+          <React.Suspense fallback={<>Loading...</>}>
           <Routes>
-            {routes.map((route) => (
-              <Route
-                key={route.path}
-                path={route.path}
-                element={<route.element />}
-              />
-            ))}
+            {routes.map((route) => {
+              return <Route
+              key={route.path}
+              path={route.path}
+              element={<ErrorBoundary><React.Suspense fallback="loading"><route.element /></React.Suspense></ErrorBoundary>}
+            />
+            })}
           </Routes>
+          </React.Suspense>
           <Outlet />
         </MantineAppShell>
       </MantineProvider>
