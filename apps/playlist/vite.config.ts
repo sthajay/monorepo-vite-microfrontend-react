@@ -8,7 +8,7 @@ export default defineConfig({
     react(),
     federation({
       name: "playlist",
-      filename: "remoteEntry.js",
+      filename: "playlistEntry.js",
       // Modules to expose
       exposes: {
         "./page": "./src/App.tsx",

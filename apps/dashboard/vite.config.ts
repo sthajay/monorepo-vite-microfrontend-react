@@ -7,7 +7,7 @@ export default defineConfig({
     react(),
     federation({
       name: "dashboard",
-      filename: "remoteEntry.js",
+      filename: "dashboardEntry.js",
       // exposes: {
       //   "./Movies": "./src/MoviesContent.tsx",
       //   "./MoviesCard": "./src/MoviesCard.tsx",
@@ -15,7 +15,8 @@ export default defineConfig({
       // },
       // shared: ["react", "react-dom", "card"],
       remotes: {
-        playlist: `http://localhost:3001/assets/remoteEntry.js`,
+        playlist: `http://localhost:3001/dist/assets/playlistEntry.js`,
+        movies: `http://localhost:3000/dist/assets/moviesEntry.js`
       },
     }),
   ],

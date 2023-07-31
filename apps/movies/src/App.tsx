@@ -6,7 +6,8 @@ import { PlaylistContent } from "playlist-content";
 function App() {
   return (
     <div>
-      <AppShell
+      <h1>Movies</h1>
+      {/* <AppShell
         navLinks={[
           {
             label: "Home",
@@ -19,10 +20,10 @@ function App() {
         ]}
         routes={[
           { path: "/", element: MoviesContent },
-          { path: "/playlist", element: PlaylistContent },
+          // { path: "/playlist", element: PlaylistContent },
         ]}
         title="Movies"
-      />
+      /> */}
     </div>
   );
 }

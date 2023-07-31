@@ -1,17 +1,21 @@
 import React, { lazy, Suspense } from "react";
-const RemoteViteReactPage = lazy(() => import("playlist/page"));
-// const RemoteViteReactComponent = lazy(
-//   () => import("remote_vite_react/component")
-// );
-
+const PlaylistViteReactPage = lazy(() => import("playlist/page"));
+const MoviesViteReactPage = lazy(() => import("movies/page"));
+const MoviesViteHomeReactComponent = lazy(() => import("movies/Home"));
 
 function App() {
   return (
     <div>
       <h1>Dashboard</h1>
       <Suspense>
-        <RemoteViteReactPage/>
-      </Suspense>  
+        <PlaylistViteReactPage/>
+      </Suspense>
+      <Suspense>
+        <MoviesViteReactPage/>
+      </Suspense>
+      <Suspense>
+        <MoviesViteHomeReactComponent/>
+      </Suspense>
     </div>
   );
 }

@@ -7,11 +7,12 @@ export default defineConfig({
     react(),
     federation({
       name: "movies",
-      filename: "remoteEntry.js",
+      filename: "moviesEntry.js",
       exposes: {
         "./Movies": "./src/MoviesContent.tsx",
         "./MoviesCard": "./src/MoviesCard.tsx",
         "./Home": "./src/Home.tsx",
+        "./page": "./src/App.tsx",
       },
       shared: ["react", "react-dom", "card"],
     }),
