@@ -4,14 +4,14 @@ import { PlaylistContent } from "playlist-content";
 // import MoviesContent from "movies-content";
 // import Home from "movies/Home";
 /* @vite-ignore */
-const MoviesContentRuntime = React.lazy(() => import("movies/Movies"));
+// const MoviesContentRuntime = React.lazy(() => import("movies/Movies"));
 // const MoviesContent = React.lazy(() => import("movies/Home"));
-const MoviesContent = React.lazy(() => import("movies-content"));
+// const MoviesContent = React.lazy(() => import("movies-content"));
 
 function App() {
   return (
     <div>
-      <AppShell
+      {/* <AppShell
         title="Playlist"
         navLinks={[
           {
@@ -36,7 +36,8 @@ function App() {
           { path: "/playlist", element: PlaylistContent },
         ]}
         colorScheme="dark"
-      />
+      /> */}
+      <h1>Playist</h1>
     </div>
   );
 }
